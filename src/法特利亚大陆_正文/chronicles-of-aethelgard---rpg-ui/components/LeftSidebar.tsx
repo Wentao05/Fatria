@@ -38,10 +38,8 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({ character, global, mvu
           <p className="text-stone-300 font-serif text-sm">{global.date}</p>
           <div className="h-[1px] w-1/2 bg-gradient-to-r from-transparent via-gold-700/50 to-transparent mx-auto my-1"></div>
           <div className="flex items-center justify-center gap-1.5 text-gold-400">
-             <MapPin size={12} className="shrink-0" />
-             <p className="font-display text-xs tracking-wider">
-               {global.location}
-             </p>
+            <MapPin size={12} className="shrink-0" />
+            <p className="font-display text-xs tracking-wider">{global.location}</p>
           </div>
         </div>
       </Panel>
@@ -54,23 +52,25 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({ character, global, mvu
             onClick={handleAvatarClick}
             title="点击更换头像"
           >
-             {/* Avatar Placeholder */}
-             <img src={avatarUrl} alt="Character" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
-             <div className="absolute inset-0 ring-inset ring-2 ring-black/40 rounded-full"></div>
+            {/* Avatar Placeholder */}
+            <img
+              src={avatarUrl}
+              alt="Character"
+              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+            />
+            <div className="absolute inset-0 ring-inset ring-2 ring-black/40 rounded-full"></div>
           </div>
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept="image/*"
-            className="hidden"
-            onChange={handleAvatarChange}
-          />
+          <input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={handleAvatarChange} />
           <h2 className="text-xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-b from-gold-100 to-gold-500 text-center">
             {character.name}
           </h2>
           <div className="flex flex-wrap justify-center gap-2 text-xs font-serif text-stone-400">
-            <span className="px-2 py-0.5 bg-stone-900/80 border border-stone-700 rounded text-stone-300">{character.race}</span>
-            <span className="px-2 py-0.5 bg-stone-900/80 border border-stone-700 rounded text-stone-300">{character.class}</span>
+            <span className="px-2 py-0.5 bg-stone-900/80 border border-stone-700 rounded text-stone-300">
+              {character.race}
+            </span>
+            <span className="px-2 py-0.5 bg-stone-900/80 border border-stone-700 rounded text-stone-300">
+              {character.class}
+            </span>
           </div>
         </div>
 
@@ -81,18 +81,8 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({ character, global, mvu
       {/* Vitals */}
       <Panel title="核心数值">
         <div className="space-y-4">
-          <StatBar
-            label="生命值 (HP)"
-            value={character.vitals.hp}
-            max={character.vitals.maxHp}
-            color="red"
-          />
-          <StatBar
-            label="魔力值 (MP)"
-            value={character.vitals.mp}
-            max={character.vitals.maxMp}
-            color="blue"
-          />
+          <StatBar label="生命值 (HP)" value={character.vitals.hp} max={character.vitals.maxHp} color="red" />
+          <StatBar label="魔力值 (MP)" value={character.vitals.mp} max={character.vitals.maxMp} color="blue" />
           <StatBar
             label="耐力值 (SP)"
             value={character.vitals.stamina}
@@ -102,36 +92,64 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({ character, global, mvu
         </div>
       </Panel>
 
-       {/* Attributes */}
-       <Panel title="基础属性">
+      {/* Attributes */}
+      <Panel title="基础属性">
         <div className="grid grid-cols-2 gap-3 text-sm">
-           <AttributeRow label="力量" value={character.attributes.strength} icon={<Shield size={14} className="text-red-400" />} />
-           <AttributeRow label="敏捷" value={character.attributes.agility} icon={<Zap size={14} className="text-yellow-400" />} />
-           <AttributeRow label="体质" value={character.attributes.constitution} icon={<Activity size={14} className="text-green-400" />} />
-           <AttributeRow label="智慧" value={character.attributes.wisdom} icon={<Brain size={14} className="text-cyan-400" />} />
-           <AttributeRow label="精神" value={character.attributes.spirit} icon={<Star size={14} className="text-blue-400" />} />
-           <AttributeRow label="气运" value={character.attributes.luck} icon={<Clover size={14} className="text-emerald-400" />} />
+          <AttributeRow
+            label="力量"
+            value={character.attributes.strength}
+            icon={<Shield size={14} className="text-red-400" />}
+          />
+          <AttributeRow
+            label="敏捷"
+            value={character.attributes.agility}
+            icon={<Zap size={14} className="text-yellow-400" />}
+          />
+          <AttributeRow
+            label="体质"
+            value={character.attributes.constitution}
+            icon={<Activity size={14} className="text-green-400" />}
+          />
+          <AttributeRow
+            label="智慧"
+            value={character.attributes.wisdom}
+            icon={<Brain size={14} className="text-cyan-400" />}
+          />
+          <AttributeRow
+            label="精神"
+            value={character.attributes.spirit}
+            icon={<Star size={14} className="text-blue-400" />}
+          />
+          <AttributeRow
+            label="气运"
+            value={character.attributes.luck}
+            icon={<Clover size={14} className="text-emerald-400" />}
+          />
         </div>
       </Panel>
 
       {/* Combat Power */}
       <Panel title="战斗评估">
-         <div className="grid grid-cols-2 gap-4">
-            <div className="flex flex-col items-center p-2 bg-stone-900/40 rounded border border-stone-800">
-               <Skull size={16} className="text-stone-400 mb-1" />
-               <span className="text-[10px] text-stone-500 uppercase">肉身战力</span>
-               <span className="text-xl font-display text-red-500 font-bold drop-shadow-md">{character.combatPower.physical}</span>
-            </div>
-            <div className="flex flex-col items-center p-2 bg-stone-900/40 rounded border border-stone-800">
-               <Zap size={16} className="text-purple-400 mb-1" />
-               <span className="text-[10px] text-stone-500 uppercase">魔法战力</span>
-               <span className="text-xl font-display text-purple-400 font-bold shadow-purple-500/20 drop-shadow">{character.combatPower.magical}</span>
-            </div>
-         </div>
+        <div className="grid grid-cols-2 gap-4">
+          <div className="flex flex-col items-center p-2 bg-stone-900/40 rounded border border-stone-800">
+            <Skull size={16} className="text-stone-400 mb-1" />
+            <span className="text-[10px] text-stone-500 uppercase">肉身战力</span>
+            <span className="text-xl font-display text-red-500 font-bold drop-shadow-md">
+              {character.combatPower.physical}
+            </span>
+          </div>
+          <div className="flex flex-col items-center p-2 bg-stone-900/40 rounded border border-stone-800">
+            <Zap size={16} className="text-purple-400 mb-1" />
+            <span className="text-[10px] text-stone-500 uppercase">魔法战力</span>
+            <span className="text-xl font-display text-purple-400 font-bold shadow-purple-500/20 drop-shadow">
+              {character.combatPower.magical}
+            </span>
+          </div>
+        </div>
       </Panel>
 
-       {/* XP */}
-       <Panel title="修炼进度">
+      {/* XP */}
+      <Panel title="修炼进度">
         <div className="space-y-3">
           <StatBar
             label="锻体经验"
@@ -184,9 +202,7 @@ const StatusBlock: React.FC<{ mvuStat: any | null }> = ({ mvuStat }) => {
             {/* Tooltip: 仅显示 描述 + 持续时间，向上延伸 */}
             <div className="absolute left-1/2 bottom-full z-40 mb-2 w-64 -translate-x-1/2 rounded-lg border border-stone-700 bg-stone-950 p-3 text-left text-xs text-stone-200 shadow-[0_10px_30px_rgba(0,0,0,0.7)] opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity">
               {entry.描述 && <p className="mb-1 leading-relaxed">{String(entry.描述)}</p>}
-              {entry.持续时间 && (
-                <p className="text-emerald-300">持续时间：{String(entry.持续时间)}</p>
-              )}
+              {entry.持续时间 && <p className="text-emerald-300">持续时间：{String(entry.持续时间)}</p>}
             </div>
           </div>
         ))}
@@ -197,10 +213,10 @@ const StatusBlock: React.FC<{ mvuStat: any | null }> = ({ mvuStat }) => {
 
 const AttributeRow: React.FC<{ label: string; value: number; icon: React.ReactNode }> = ({ label, value, icon }) => (
   <div className="flex items-center justify-between p-1.5 border-b border-stone-800 hover:bg-stone-800/30 transition-colors">
-     <div className="flex items-center gap-2 text-stone-400 font-serif">
-        {icon}
-        <span>{label}</span>
-     </div>
-     <span className="font-mono text-gold-200 font-bold">{value}</span>
+    <div className="flex items-center gap-2 text-stone-400 font-serif">
+      {icon}
+      <span>{label}</span>
+    </div>
+    <span className="font-mono text-gold-200 font-bold">{value}</span>
   </div>
 );

@@ -15,7 +15,7 @@ const App: React.FC = () => {
       return;
     }
 
-    console.info("Character Data:", data);
+    console.info('Character Data:', data);
     setAppState(AppState.GENERATING);
 
     try {
@@ -41,7 +41,7 @@ const App: React.FC = () => {
         `敏捷：${data.stats.agility}`,
         `智力：${data.stats.intelligence}`,
         `体质：${data.stats.constitution}`,
-        `精神：${data.stats.spirit}`
+        `精神：${data.stats.spirit}`,
       );
 
       if (data.description) {
@@ -60,7 +60,7 @@ const App: React.FC = () => {
           role: 'user',
           message: characterInfo,
           name: data.name,
-        }
+        },
       ]);
 
       // 触发 AI 回复
@@ -91,22 +91,20 @@ const App: React.FC = () => {
 
         {/* Content */}
         <div className="relative w-full max-w-lg animate-fade-in-up">
-            <div className="absolute -inset-1 bg-gradient-to-r from-amber-700 to-purple-600 rounded-lg blur opacity-50"></div>
-            <div className="relative bg-stone-900 border border-stone-700 rounded-lg p-8 shadow-2xl">
-                <button onClick={closeModal} className="absolute top-4 right-4 text-stone-500 hover:text-stone-300">
-                    <X />
-                </button>
+          <div className="absolute -inset-1 bg-gradient-to-r from-amber-700 to-purple-600 rounded-lg blur opacity-50"></div>
+          <div className="relative bg-stone-900 border border-stone-700 rounded-lg p-8 shadow-2xl">
+            <button onClick={closeModal} className="absolute top-4 right-4 text-stone-500 hover:text-stone-300">
+              <X />
+            </button>
 
-                <h3 className="text-2xl font-cinzel text-amber-500 mb-4 border-b border-stone-800 pb-2">
-                    系统详情
-                </h3>
-                <div className="text-stone-300 space-y-4 font-serif min-h-[200px] flex items-center justify-center border-2 border-dashed border-stone-800 rounded bg-stone-950/50">
-                    <p className="text-center italic text-stone-500">
-                        [此处为 {activeModal} 的详细说明界面] <br/>
-                        <span className="text-sm">等待 LLM 知识库接入...</span>
-                    </p>
-                </div>
+            <h3 className="text-2xl font-cinzel text-amber-500 mb-4 border-b border-stone-800 pb-2">系统详情</h3>
+            <div className="text-stone-300 space-y-4 font-serif min-h-[200px] flex items-center justify-center border-2 border-dashed border-stone-800 rounded bg-stone-950/50">
+              <p className="text-center italic text-stone-500">
+                [此处为 {activeModal} 的详细说明界面] <br />
+                <span className="text-sm">等待 LLM 知识库接入...</span>
+              </p>
             </div>
+          </div>
         </div>
       </div>
     );
@@ -114,23 +112,18 @@ const App: React.FC = () => {
 
   const renderLoadingScreen = () => (
     <div className="min-h-screen flex flex-col items-center justify-center bg-stone-950 text-amber-500 z-50">
-        <Loader2 className="w-16 h-16 animate-spin mb-8" />
-        <h2 className="text-2xl font-cinzel tracking-widest animate-pulse">Weaving Fate...</h2>
-        <p className="text-stone-500 mt-4 text-sm font-serif">正在根据您的设定生成世界线...</p>
+      <Loader2 className="w-16 h-16 animate-spin mb-8" />
+      <h2 className="text-2xl font-cinzel tracking-widest animate-pulse">Weaving Fate...</h2>
+      <p className="text-stone-500 mt-4 text-sm font-serif">正在根据您的设定生成世界线...</p>
     </div>
   );
 
   return (
     <div className="min-h-screen bg-stone-950 text-stone-200 selection:bg-amber-900 selection:text-white">
-      {appState === AppState.INTRO && (
-        <IntroScreen onComplete={() => setAppState(AppState.CREATION)} />
-      )}
+      {appState === AppState.INTRO && <IntroScreen onComplete={() => setAppState(AppState.CREATION)} />}
 
       {appState === AppState.CREATION && (
-        <CharacterCreation
-            onStartGame={handleStartGame}
-            onRequestModal={(type) => setActiveModal(type)}
-        />
+        <CharacterCreation onStartGame={handleStartGame} onRequestModal={type => setActiveModal(type)} />
       )}
 
       {appState === AppState.GENERATING && renderLoadingScreen()}

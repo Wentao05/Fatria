@@ -9,21 +9,21 @@ interface IntroScreenProps {
 const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
   const [visibleLines, setVisibleLines] = useState<number>(0);
   const textLines = [
-    "你的童年故事里，是否也曾有过这样一个世界？",
-    "古老的咒语在法师的指尖吟唱，",
-    "锋利的刀剑在英雄的手中嗡鸣。",
-    "国王在此加冕，骑士在此冲锋。",
-    "破碎的王国等待着统一，邪恶的巨龙盘踞在孤山。",
-    "预言与传说交织，荣耀与背叛并存。",
-    " ", // Spacer
-    "那些英雄史诗并非遥不可及。",
-    "它们就沉睡在每一次挥剑的决心，",
-    "每一次施法的专注，",
-    "和每一个面对黑暗时，仍不愿回头的选择里。",
-    " ", // Spacer
-    "现在，故事的空白书页在你面前展开。",
-    "拿起你的笔，写下第一行字。",
-    "你的传说，将从何处开始？"
+    '你的童年故事里，是否也曾有过这样一个世界？',
+    '古老的咒语在法师的指尖吟唱，',
+    '锋利的刀剑在英雄的手中嗡鸣。',
+    '国王在此加冕，骑士在此冲锋。',
+    '破碎的王国等待着统一，邪恶的巨龙盘踞在孤山。',
+    '预言与传说交织，荣耀与背叛并存。',
+    ' ', // Spacer
+    '那些英雄史诗并非遥不可及。',
+    '它们就沉睡在每一次挥剑的决心，',
+    '每一次施法的专注，',
+    '和每一个面对黑暗时，仍不愿回头的选择里。',
+    ' ', // Spacer
+    '现在，故事的空白书页在你面前展开。',
+    '拿起你的笔，写下第一行字。',
+    '你的传说，将从何处开始？',
   ];
 
   useEffect(() => {
@@ -43,10 +43,10 @@ const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
 
       <div className="max-w-3xl w-full z-10 text-center space-y-6">
         <div className="mb-12 opacity-80">
-            <h1 className="text-4xl md:text-6xl text-amber-500 font-cinzel tracking-widest drop-shadow-lg mb-4">
-                CHRONICLES
-            </h1>
-            <div className="h-1 w-24 mx-auto bg-amber-700"></div>
+          <h1 className="text-4xl md:text-6xl text-amber-500 font-cinzel tracking-widest drop-shadow-lg mb-4">
+            CHRONICLES
+          </h1>
+          <div className="h-1 w-24 mx-auto bg-amber-700"></div>
         </div>
 
         <div className="space-y-4 min-h-[400px]">
@@ -58,7 +58,7 @@ const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
                 ${line.trim() === '' ? 'h-4' : ''}
               `}
               style={{
-                textShadow: '0 2px 4px rgba(0,0,0,0.8)'
+                textShadow: '0 2px 4px rgba(0,0,0,0.8)',
               }}
             >
               {line}
@@ -66,7 +66,9 @@ const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
           ))}
         </div>
 
-        <div className={`mt-12 transition-opacity duration-1000 ${visibleLines >= textLines.length ? 'opacity-100' : 'opacity-0'}`}>
+        <div
+          className={`mt-12 transition-opacity duration-1000 ${visibleLines >= textLines.length ? 'opacity-100' : 'opacity-0'}`}
+        >
           <Divider className="my-8" />
           <button
             onClick={onComplete}

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
@@ -6,9 +6,12 @@
     <title>永恒编年史 | Aethelgard Chronicles</title>
     <meta name="description" content="一个基于LLM的沉浸式文字RPG交互界面，具有古典优雅的美学设计。" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Noto+Serif+SC:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Noto+Serif+SC:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <script>
       tailwind.config = {
         theme: {
@@ -32,25 +35,25 @@
               bronze: {
                 500: '#CD7F32',
                 900: '#4A2E12',
-              }
+              },
             },
             backgroundImage: {
               'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-              'parchment': 'linear-gradient(to bottom right, #fdfbf7, #f2e9d8)',
+              parchment: 'linear-gradient(to bottom right, #fdfbf7, #f2e9d8)',
             },
             animation: {
               'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'shine': 'shine 2s linear infinite',
+              shine: 'shine 2s linear infinite',
             },
             keyframes: {
               shine: {
                 '0%': { backgroundPosition: '-200% center' },
                 '100%': { backgroundPosition: '200% center' },
-              }
-            }
+              },
+            },
           },
         },
-      }
+      };
     </script>
     <style>
       /* Custom Scrollbar for Webkit */
@@ -59,33 +62,33 @@
         height: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #1c1917; 
+        background: #1c1917;
       }
       ::-webkit-scrollbar-thumb {
-        background: #554211; 
+        background: #554211;
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #AA8422; 
+        background: #aa8422;
       }
       body {
         background-color: #0c0a09;
         color: #e7e5e4;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
-    "@google/genai": "https://esm.sh/@google/genai@^1.33.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@^19.2.3",
+          "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+          "react/": "https://esm.sh/react@^19.2.3/",
+          "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+          "@google/genai": "https://esm.sh/@google/genai@^1.33.0"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>

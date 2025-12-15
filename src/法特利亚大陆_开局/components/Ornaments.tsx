@@ -4,9 +4,9 @@ export const Divider: React.FC<{ className?: string }> = ({ className = '' }) =>
   <div className={`flex items-center justify-center w-full py-4 opacity-80 ${className}`}>
     <div className="h-px w-full bg-gradient-to-r from-transparent via-amber-700 to-transparent"></div>
     <div className="mx-4 text-amber-600">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M12 2L15 12L22 12L16 16L19 22L12 18L5 22L8 16L2 12L9 12L12 2Z" />
-        </svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M12 2L15 12L22 12L16 16L19 22L12 18L5 22L8 16L2 12L9 12L12 2Z" />
+      </svg>
     </div>
     <div className="h-px w-full bg-gradient-to-r from-transparent via-amber-700 to-transparent"></div>
   </div>
@@ -20,9 +20,7 @@ export const CornerDecoration: React.FC<{ position: 'tl' | 'tr' | 'bl' | 'br' }>
     br: 'bottom-0 right-0 border-b-2 border-r-2 rounded-br-lg',
   };
 
-  return (
-    <div className={`absolute w-8 h-8 border-amber-600/50 pointer-events-none ${classes[position]}`} />
-  );
+  return <div className={`absolute w-8 h-8 border-amber-600/50 pointer-events-none ${classes[position]}`} />;
 };
 
 export const Frame: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className = '' }) => (

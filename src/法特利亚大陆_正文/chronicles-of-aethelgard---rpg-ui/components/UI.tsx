@@ -26,7 +26,11 @@ export const StatBar: React.FC<StatBarProps> = ({ label, value, max, color, clas
       {label && (
         <div className="flex justify-between text-xs font-serif text-[var(--gold-300)] tracking-wider drop-shadow">
           <span>{label}</span>
-          {showValue && <span className="font-mono text-[var(--gold-100)]">{value} / {max}</span>}
+          {showValue && (
+            <span className="font-mono text-[var(--gold-100)]">
+              {value} / {max}
+            </span>
+          )}
         </div>
       )}
       <div className="relative h-3 w-full bg-[#0f1018] border border-[#252736] rounded-md overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.6)] backdrop-blur">
@@ -42,7 +46,11 @@ export const StatBar: React.FC<StatBarProps> = ({ label, value, max, color, clas
 };
 
 // Panel Component (The Glass/Gold Box)
-export const Panel: React.FC<{ children: React.ReactNode; title?: string; className?: string }> = ({ children, title, className = '' }) => {
+export const Panel: React.FC<{ children: React.ReactNode; title?: string; className?: string }> = ({
+  children,
+  title,
+  className = '',
+}) => {
   return (
     <div
       className={`
@@ -60,9 +68,9 @@ export const Panel: React.FC<{ children: React.ReactNode; title?: string; classN
 
       {title && (
         <div className="mb-3 pb-2 border-b border-[#2f3040]">
-           <h3 className="text-[var(--gold-100)] font-display font-semibold tracking-widest text-sm uppercase text-center shadow-black drop-shadow-xl">
-             {title}
-           </h3>
+          <h3 className="text-[var(--gold-100)] font-display font-semibold tracking-widest text-sm uppercase text-center shadow-black drop-shadow-xl">
+            {title}
+          </h3>
         </div>
       )}
       {children}
@@ -71,7 +79,12 @@ export const Panel: React.FC<{ children: React.ReactNode; title?: string; classN
 };
 
 // Action Button
-export const GoldButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement> & { icon?: React.ReactNode }> = ({ children, icon, className, ...props }) => {
+export const GoldButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement> & { icon?: React.ReactNode }> = ({
+  children,
+  icon,
+  className,
+  ...props
+}) => {
   return (
     <button
       className={`
@@ -88,7 +101,9 @@ export const GoldButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement> 
       `}
       {...props}
     >
-      {icon && <span className="text-[var(--gold-300)] group-hover:text-[var(--gold-100)] transition-colors">{icon}</span>}
+      {icon && (
+        <span className="text-[var(--gold-300)] group-hover:text-[var(--gold-100)] transition-colors">{icon}</span>
+      )}
       <span className="relative z-10 drop-shadow">{children}</span>
 
       <div className="absolute inset-0 bg-[var(--gold-500)]/6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none" />
