@@ -1,0 +1,80 @@
+@import 'tailwindcss';
+
+:root {
+  --obsidian-900: #050507;
+  --obsidian-800: #0b0d13;
+  --obsidian-700: #11131c;
+  --obsidian-600: #1a1d28;
+  --gold-100: #f9f3da;
+  --gold-300: #f2d08a;
+  --gold-500: #d6a74f;
+  --gold-700: #8b6b2c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(55, 55, 80, 0.25), transparent 30%),
+    radial-gradient(circle at 80% 10%, rgba(55, 55, 80, 0.2), transparent 25%),
+    radial-gradient(circle at 10% 80%, rgba(120, 80, 40, 0.15), transparent 30%),
+    linear-gradient(135deg, #040507 0%, #0b0d13 50%, #050507 100%);
+  color: var(--gold-100);
+  font-family:
+    'Inter',
+    'Noto Sans SC',
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+#app {
+  width: 100%;
+}
+
+.react-app-shell {
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+}
+
+.column-scroll {
+  max-height: min(1200px, calc(100vh - 96px));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Cinzel', 'Cormorant Garamond', 'Noto Serif SC', serif;
+    letter-spacing: 0.08em;
+  }
+
+  .font-mono {
+    font-family:
+      'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+      monospace;
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold-700) var(--obsidian-800);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--obsidian-800);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #cda257, #8b6b2c);
+    border-radius: 9999px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  }
+}
