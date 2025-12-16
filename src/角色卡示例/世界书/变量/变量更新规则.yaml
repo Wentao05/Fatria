@@ -2,7 +2,11 @@
 变量更新规则:
   世界:
     当前时间:
+<<<<<<< HEAD
       format: YYYY年MM月DD日 星期X HH:MM
+=======
+      format: YYYY-MM-DD HH:MM
+>>>>>>> 4e5049c48ba60ffb6caf6bf2fd6c7e846f4d4480
     近期事务:
       type: |-
         {

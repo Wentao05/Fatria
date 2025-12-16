@@ -6,7 +6,12 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,css,scss,html,vue}\"",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
+<<<<<<< HEAD
     "dump": "node dump_schema.ts"
+=======
+    "dump": "node dump_schema.ts",
+    "sync": "node tavern_sync.mjs"
+>>>>>>> 4e5049c48ba60ffb6caf6bf2fd6c7e846f4d4480
   },
   "browserslist": [
     "defaults and partially supports es6-module"
@@ -87,7 +92,10 @@
     "jqueryui": "^1.11.1",
     "klona": "^2.0.6",
     "lodash": "^4.17.21",
+<<<<<<< HEAD
     "lucide-react": "^0.561.0",
+=======
+>>>>>>> 4e5049c48ba60ffb6caf6bf2fd6c7e846f4d4480
     "pinia": "^3.0.4",
     "pixi.js": "^8.14.3",
     "react": "^19.2.3",
@@ -98,7 +106,11 @@
     "vue-router": "^4.6.4",
     "vue3-pixi": "1.0.0-beta.3",
     "yaml": "^2.8.2",
+<<<<<<< HEAD
     "zod": "^4.2.1"
+=======
+    "zod": "^4.2.0"
+>>>>>>> 4e5049c48ba60ffb6caf6bf2fd6c7e846f4d4480
   },
   "pnpm": {
     "onlyBuiltDependencies": [
