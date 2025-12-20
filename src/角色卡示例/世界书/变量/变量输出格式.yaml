@@ -1,6 +1,7 @@
 ---
 变量输出格式:
   rule:
+<<<<<<< HEAD
     - you should output the update analysis and the actual update commands in the end of the next reply
     - 'the update commands must strictly follow the **JSON Patch (RFC 6902)** standard, but can only use the following operations: `replace`, `add` (only used to insert new items into an object or array), `remove`; that is, the output must be a valid JSON array containing operation objects'
     - don't update field names starts with `_` as they are readonly, such as `_变量`
@@ -12,11 +13,29 @@
     - ${analyze every variable based on its corresponding `check`, according only to current reply instead of previous plots: ...}
     </update_analysis>
     <json_patch>
+=======
+    - you must output the update analysis and the actual update commands in the end of the next reply
+    - 'the update commands must strictly follow the **JSON Patch (RFC 6902)** standard, but can only use the following operations: `replace` (replace the value of existing paths), `add` (only used to insert new items into an object or array), `remove`; that is, the output must be a valid JSON array containing operation objects'
+    - don't update field names starts with `_` as they are readonly, such as `_变量`
+  format: |-
+    <UpdateVariable>
+    </Analysis>$(IN ENGLISH, no more than 80 words)
+    - ${calculate time passed: ...}
+    - ${decide whether dramatic updates are allowed as it's in a special case or the time passed is more than usual: yes/no}
+    - ${analyze every variable based on its corresponding `check`, according only to current reply instead of previous plots: ...}
+    </Analysis>
+    </JSONPatch>
+>>>>>>> a3304f5c537f59bab41e4904c632b679abfda9d6
     [
       { "op": "replace", "path": "${/path/to/variable}", "value": "${new_value}" },
       { "op": "add", "path": "${/path/to/object/newKey}", "value": "${content}" }
       { "op": "remove", "path": "${/path/to/array/0}" },
       ...
     ]
+<<<<<<< HEAD
     </json_patch>
     </update>
+=======
+    </JSONPatch>
+    </UpdateVariable>
+>>>>>>> a3304f5c537f59bab41e4904c632b679abfda9d6

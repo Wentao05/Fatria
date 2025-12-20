@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Schema } from '../../schema';
+=======
+import { Schema } from '../schema';
+>>>>>>> a3304f5c537f59bab41e4904c632b679abfda9d6
 
 export const useDataStore = defineStore('data', () => {
   const message_id = getCurrentMessageId();
