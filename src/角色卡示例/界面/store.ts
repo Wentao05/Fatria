@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import { Schema } from '../../schema';
-
-export const useDataStore = defineStore('data', () => {
-  const message_id = getCurrentMessageId();
-  const data = ref(Schema.parse(_.get(getVariables({ type: 'message', message_id }), 'stat_data', {})));
-
-  watchEffect(() => {
-    updateVariablesWith(
-      variables => {
-        _.set(variables, 'stat_data', klona(data.value));
-=======
 import { Schema } from '../schema';
 
 export const useDataStore = defineStore(
@@ -29,17 +17,10 @@ export const useDataStore = defineStore(
         updateVariablesWith(
           variables => {
             _.set(variables, 'stat_data', parsed);
->>>>>>> fa6f61d75970bed3668f8d9d1d044052890e077a
-        return variables;
-      },
-      { type: 'message', message_id },
-    );
-<<<<<<< HEAD
-  });
-
-  return { data };
-});
-=======
+            return variables;
+          },
+          { type: 'message', message_id },
+        );
       },
       { deep: true, debounce: 500 },
     );
@@ -47,4 +28,3 @@ export const useDataStore = defineStore(
     return { data };
   }),
 );
->>>>>>> fa6f61d75970bed3668f8d9d1d044052890e077a
