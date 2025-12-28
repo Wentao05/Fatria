@@ -1,8 +1,5 @@
 import App from './App.vue';
-<<<<<<< HEAD
-=======
 import './global.css';
->>>>>>> 4ac7bf5d47e725f28c4278aa1dbabc21eb9be37e
 
 $(async () => {
   await waitGlobalInitialized('Mvu');
