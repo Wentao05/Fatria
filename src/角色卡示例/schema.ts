@@ -18,12 +18,29 @@ export const Schema = z.object({
       ),
     })
     .transform(data => {
+<<<<<<< HEAD
+=======
+      const $依存度阶段 =
+        data.依存度 < 20
+          ? '消极自毁'
+          : data.依存度 < 40
+            ? '渴求注视'
+            : data.依存度 < 60
+              ? '暗中靠近'
+              : data.依存度 < 80
+                ? '忐忑相依'
+                : '柔软依存';
+>>>>>>> 91f45eafe3411b189964b27942e50d96f7d02445
       data.称号 = _(data.称号)
         .entries()
         .takeRight(Math.ceil(data.依存度 / 10))
         .fromPairs()
         .value();
+<<<<<<< HEAD
       return data;
+=======
+      return { ...data, $依存度阶段 };
+>>>>>>> 91f45eafe3411b189964b27942e50d96f7d02445
     }),
 
   主角: z.object({

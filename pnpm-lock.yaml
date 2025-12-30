@@ -44,9 +44,12 @@ importers:
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
+<<<<<<< HEAD
       lucide-react:
         specifier: ^0.561.0
         version: 0.561.0(react@19.2.3)
+=======
+>>>>>>> 91f45eafe3411b189964b27942e50d96f7d02445
       pinia:
         specifier: ^3.0.4
         version: 3.0.4(typescript@6.0.0-dev.20250807)(vue@3.5.26(typescript@6.0.0-dev.20250807))
@@ -2680,11 +2683,14 @@ packages:
   lower-case@2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
 
+<<<<<<< HEAD
   lucide-react@0.561.0:
     resolution: {integrity: sha512-Y59gMY38tl4/i0qewcqohPdEbieBy7SovpBL9IFebhc2mDd8x4PZSOsiFRkpPcOq6bj1r/mjH/Rk73gSlIJP2A==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
+=======
+>>>>>>> 91f45eafe3411b189964b27942e50d96f7d02445
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
@@ -3945,7 +3951,10 @@ packages:
   whatwg-encoding@3.1.1:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
     engines: {node: '>=18'}
+<<<<<<< HEAD
     deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+=======
+>>>>>>> 91f45eafe3411b189964b27942e50d96f7d02445
 
   whatwg-mimetype@4.0.0:
     resolution: {integrity: sha512-QaKxh0eNIi2mE9p2vEdzfagOKHCcj1pJ56EEHGQOVxp8r9/iszLUUV7v89x9O1p/T+NlTM5W7jW6+cz4Fq1YVg==}
@@ -6593,10 +6602,13 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
+<<<<<<< HEAD
   lucide-react@0.561.0(react@19.2.3):
     dependencies:
       react: 19.2.3
 
+=======
+>>>>>>> 91f45eafe3411b189964b27942e50d96f7d02445
   magic-string@0.30.21:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5

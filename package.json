@@ -6,7 +6,12 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,css,scss,html,vue}\"",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
+<<<<<<< HEAD
     "dump": "node dump_schema.ts"
+=======
+    "dump": "node dump_schema.ts",
+    "sync": "node tavern_sync.mjs"
+>>>>>>> 91f45eafe3411b189964b27942e50d96f7d02445
   },
   "browserslist": [
     "defaults and partially supports es6-module"
@@ -87,7 +92,10 @@
     "jqueryui": "^1.11.1",
     "klona": "^2.0.6",
     "lodash": "^4.17.21",
+<<<<<<< HEAD
     "lucide-react": "^0.561.0",
+=======
+>>>>>>> 91f45eafe3411b189964b27942e50d96f7d02445
     "pinia": "^3.0.4",
     "pixi.js": "^8.14.3",
     "react": "^19.2.3",
