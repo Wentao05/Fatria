@@ -86,11 +86,19 @@
 </small>
 </cross_channel>
 
+<<<<<<< HEAD
 <update>
 <initvar>
 ```yaml
 世界:
   当前时间: 2025年4月7日 星期一 08:42
+=======
+<UpdateVariable>
+<initvar>
+```yaml
+世界:
+  当前时间: 2025-04-07 08:42
+>>>>>>> 8a490405107f2fc458a2d9e2d1ad4101cf9dbb6f
   当前地点: 私立星见学园·2年A班教室
   近期事务:
     白娅转学: 白娅刚刚转入私立星见学园2年A班，进行了简短的自我介绍
@@ -125,4 +133,10 @@
       数量: 1
 ```
 </initvar>
+<<<<<<< HEAD
 </update>
+=======
+</UpdateVariable>
+
+<StatusPlaceHolderImpl/>
+>>>>>>> 8a490405107f2fc458a2d9e2d1ad4101cf9dbb6f
