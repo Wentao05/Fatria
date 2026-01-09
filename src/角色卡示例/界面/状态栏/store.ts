@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Schema } from '../../schema';
 
 export const useDataStore = defineStore('data', () => {
@@ -16,3 +17,9 @@ export const useDataStore = defineStore('data', () => {
 
   return { data };
 });
+=======
+import { defineMvuDataStore } from '@/util/mvu';
+import { Schema } from '../../schema';
+
+export const useDataStore = defineMvuDataStore(Schema, { type: 'message', message_id: getCurrentMessageId() });
+>>>>>>> a17361edcd8bc72f363b2accf0cd15361ec3f8de
