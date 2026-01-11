@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+<<<<<<< HEAD
   content: ['./src/**/*.{html,vue,js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
@@ -15,6 +16,13 @@ export default {
         },
       },
     },
+=======
+  content: ['./src/**/*.{html,vue,js,ts}'],
+
+  darkMode: 'class',
+  theme: {
+    extend: {},
+>>>>>>> 4e2a9fc6b9f5ae825823eb357fffa0d0ea284155
   },
   variants: {
     extend: {},
